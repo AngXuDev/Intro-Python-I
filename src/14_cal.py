@@ -22,3 +22,15 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+if len(sys.argv) > 3:
+    print(f"Please provide arguments in the format 'Python 14_cal.py (month) (year)' where month is between 01-12")
+elif len(sys.argv) == 3:
+    m = int(sys.argv[1])
+    y = int(sys.argv[2])
+    print(calendar.month(y, m))
+elif len(sys.argv) == 2:
+    m = int(sys.argv[1])
+    print(calendar.month(2019, m))
+elif len(sys.argv) == 1:
+    print(calendar.month(2019, 10))
